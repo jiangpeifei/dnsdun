@@ -41,13 +41,12 @@ class Handle:
             ret = json.loads(response_data)
             status_code = int(ret["status"]["code"])
             if status_code == 1:
-                print(self.data['domain'], ret["status"]["message"])
+                print(self.data['domain'], ret)
             else:
-                error_message = ret["ret"]
-                print(self.data['domain'], ret["ret"])
-                self.handle_error(error_message)
+                print(self.data['domain'], ret)
+                self.handle_error(ret)
         except Exception as e:
-            response_data = '请求错误，请尝试删除域名后重新添加。错误 ： %s' % e
+            response_data = '请求错误，请登陆dnsdun检查。错误 ： %s' % e
             print(self.data['domain'], response_data)
             self.handle_error(response_data)
             return
