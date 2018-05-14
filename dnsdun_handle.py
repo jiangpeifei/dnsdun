@@ -75,6 +75,8 @@ if handle_type == '3':
 if handle_type == '2':
     # 获取ips文件并动态生成与服务器对应ip列表
     ips_files = os.listdir('./ips/')
+    ips_files.remove('.DS_Store')
+    print('\n服务器列表:'ips_files)
     ips_lists = locals()
     for i in range(len(ips_files)):
         ips_lists['v%d-ips' % i] = [ip.rstrip() for ip in open('./ips/v%d-ips' % i, 'r', encoding='utf-8').readlines()]
