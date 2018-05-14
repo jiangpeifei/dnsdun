@@ -89,10 +89,8 @@ if handle_type == '2':
 
     domain_ip = zip(domains, ips)
 
-    sub_domains = input('\n默认解析 * ,直接按回车即可:\n自定义主机类型请自行输入并以","隔开(例: www,wap,@ )）\n:')
-    default_sub_domains = ['*']
-    if sub_domains is not '':
-        default_sub_domains.extend(sub_domains.split(','))
+    sub_domains = input('\n自定义主机类型请自行输入并以","隔开(例: www,wap,@ )）\n:')
+    default_sub_domains = sub_domains.split(',')
     print('\n---------域名需要添加的解析为 %s---------' % ', '.join(default_sub_domains))
 
     print('\n---------开始添加解析---------\n')
