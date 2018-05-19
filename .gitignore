@@ -103,3 +103,7 @@ ENV/
 
 #ips
 ips/
+
+#local
+domains.txt
+error_domain.txt
