@@ -36,7 +36,7 @@ class Handle:
             'a': method,  # add/del
         }
         try:
-            response = requests.post(self.base_url, params=params, data=self.data)
+            response = requests.post(self.base_url, params=params, data=self.data, timeout=5)
             response_data = response.content
             ret = json.loads(response_data)
             status_code = int(ret["status"]["code"])

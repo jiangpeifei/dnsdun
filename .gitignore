@@ -105,5 +105,4 @@ ENV/
 ips/
 
 #local
-domains.txt
-error_domain.txt
+*.txt

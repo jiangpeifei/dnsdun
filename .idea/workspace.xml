@@ -4,8 +4,9 @@
     <list default="true" id="215e8695-3c12-4693-87a8-0b34f2bdc88f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dnsdun_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/dnsdun_handle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dnsdunapi/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/dnsdunapi/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domains.txt" beforeDir="false" afterPath="$PROJECT_DIR$/domains.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error_domain.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,15 +17,15 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/dnsdun$test.coverage" NAME="test Coverage Results" MODIFIED="1526215610271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/dnsdun$dnsdun_handle.coverage" NAME="dnsdun_handle Coverage Results" MODIFIED="1526271199415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dnsdun$dnsdun_handle.coverage" NAME="dnsdun_handle Coverage Results" MODIFIED="1527001600387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="dnsdun_handle.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dnsdun_handle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="146" selection-start-line="146" selection-end-line="146" />
+            <state relative-caret-position="580">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
               </folding>
@@ -32,11 +33,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="107" column="1" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dnsdunapi/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="323">
+              <caret line="72" column="25" lean-forward="true" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
               <folding>
                 <element signature="e#640#651#0" expanded="true" />
               </folding>
@@ -79,8 +89,8 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/domains.txt" />
         <option value="$PROJECT_DIR$/referto/其他参考文献.md" />
-        <option value="$PROJECT_DIR$/dnsdunapi/api.py" />
         <option value="$PROJECT_DIR$/error_domain.txt" />
+        <option value="$PROJECT_DIR$/dnsdunapi/api.py" />
         <option value="$PROJECT_DIR$/dnsdun_handle.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
@@ -96,7 +106,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="346" />
+    <option name="x" value="251" />
     <option name="y" value="23" />
     <option name="width" value="1429" />
     <option name="height" value="947" />
@@ -255,7 +265,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="346" y="23" width="1429" height="947" extended-state="0" />
+    <frame x="251" y="23" width="1429" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
@@ -265,7 +275,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32941177" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32941177" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29776496" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30209085" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32932073" />
@@ -328,6 +338,33 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dnsdun_handle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2145">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dnsdunapi/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#640#651#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domains.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dnsdun_handle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2145">
@@ -444,6 +481,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="75">
@@ -452,12 +494,8 @@
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/error_domain.txt" />
     <entry file="file://$PROJECT_DIR$/domains.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -465,11 +503,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error_domain.txt" />
+    <entry file="file:///usr/local/lib/python3.6/site-packages/requests/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="448" selection-start-line="448" selection-end-line="448" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/urllib3/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="149" selection-start-line="149" selection-end-line="149" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dnsdunapi/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="323">
+          <caret line="72" column="25" lean-forward="true" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
           <folding>
             <element signature="e#640#651#0" expanded="true" />
           </folding>
@@ -478,15 +529,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+        <state relative-caret-position="735">
+          <caret line="107" column="1" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dnsdun_handle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        <state relative-caret-position="580">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#15#24#0" expanded="true" />
           </folding>
