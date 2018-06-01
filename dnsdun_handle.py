@@ -115,6 +115,8 @@ if handle_type == '2':
             t.setDaemon(True)
             t.start()
 
+    de_queue.join()
+
 if handle_type == '4':
 
     de_queue = Queue()  # 重置de_queue
@@ -144,6 +146,8 @@ if handle_type == '4':
                 t = ThreadDomain(de_queue, handle_type)
                 t.setDaemon(True)
                 t.start()
+
+    de_queue.join()
 
 de_queue.join()
 
