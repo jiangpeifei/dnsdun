@@ -46,6 +46,7 @@ class Handle:
             else:
                 print(self.data['domain'], ret["status"]["message"])
                 self.handle_error(ret)
+                return
         except Exception as e:
             response_data = '请求错误，请登陆dnsdun检查。错误 ： %s' % e
             print(self.data['domain'], response_data)
@@ -71,26 +72,28 @@ class Handle:
         self.data['domain'] = domain
         ret = self.req('record', 'list')
         id_names = dict()
-        records = ret["records"]
-        for record in records:
-            if record['type'] == 'A':
-                id_names[record['name']] = record['id']
+        if ret is not None:
+            records = ret["records"]
+            for record in records:
+                if record['type'] == 'A':
+                    id_names[record['name']] = record['id']
         return id_names
 
     def record_del(self, domain, record_names):
         self.data['domain'] = domain
         domain_records = self.record_list(domain)
-        if record_names is not None:
-            # self.data['record_id'] = domain_records[record_name]
-            # return self.req('record', 'del')
-            for record_name in record_names:
-                self.data['record_id'] = domain_records[record_name]
-                self.req('record', 'del')
-        else:
-            domain_records = self.record_list(domain)
-            for record_name in domain_records.keys():
-                self.data['record_id'] = domain_records[record_name]
-                self.req('record', 'del')
+        if len(domain_records) >0:
+            if record_names is not None:
+                # self.data['record_id'] = domain_records[record_name]
+                # return self.req('record', 'del')
+                for record_name in record_names:
+                    self.data['record_id'] = domain_records[record_name]
+                    self.req('record', 'del')
+            else:
+                domain_records = self.record_list(domain)
+                for record_name in domain_records.keys():
+                    self.data['record_id'] = domain_records[record_name]
+                    self.req('record', 'del')
 
     def handle_error(self, error_message):
         f = open('./error_domain.txt', 'a+')
