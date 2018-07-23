@@ -5,9 +5,9 @@ from queue import Queue
 from dnsdunapi import api
 
 
-max_thread_num = 2
-uid = 'uid',
-api_key = 'api_key',
+max_thread_num = 10
+uid = '56104',
+api_key = 'DdahszuZQfmXYGTz',
 handle = api.Handle(uid, api_key)
 # domain_add = handle.domain_add('test.com')
 # record_add = handle.record_add(domain='test.com', sub_domain='*', value='1.1.1.1')
@@ -45,13 +45,15 @@ class ThreadDomain(threading.Thread, api.Handle):
             if self.method == '3':
                 self.domain_del(item)
             if self.method == '2':
-                if mutex.acquire():
-                    self.record_add(domain='%s' % item[0], sub_domain='%s' % item[1], value='%s' % item[2])
-                    mutex.release()
+                # if mutex.acquire():
+                #     self.record_add(domain='%s' % item[0], sub_domain='%s' % item[1], value='%s' % item[2])
+                #     mutex.release()
+                self.record_add(domain='%s' % item[0], sub_domain='%s' % item[1], value='%s' % item[2])
             if self.method == '4':
-                if mutex.acquire():
-                    self.record_del(item[0], item[1])
-                    mutex.release()
+                # if mutex.acquire():
+                #     self.record_del(item[0], item[1])
+                #     mutex.release()
+                self.record_del(item[0], item[1])
             self.queue.task_done()
 
 
@@ -61,7 +63,7 @@ for domain in domains:
     de_queue.put(domain)
 
 # 添加和删除解析无法多线程，数量大之后会封，加全局锁每次执行一条
-mutex = threading.Lock()
+# mutex = threading.Lock()
 
 if handle_type == '1':
     print('\n---------开始添加域名---------\n')
@@ -104,16 +106,21 @@ if handle_type == '2':
 
     print('\n---------开始添加解析---------\n')
 
-    de_queue = Queue()  # 重置de_queue
+    records = []
 
     for domain, ip in domain_ip:
         for sub_domain in default_sub_domains:
-            de_queue.put((domain, sub_domain, ip))
+            records.append([domain, sub_domain, ip])
 
-        for i in range(max_thread_num):
-            t = ThreadDomain(de_queue, handle_type)
-            t.setDaemon(True)
-            t.start()
+    de_queue = Queue()  # 重置de_queue
+
+    for domain, sub_domain, ip in records:
+        de_queue.put((domain, sub_domain, ip))
+
+    for i in range(max_thread_num):
+        t = ThreadDomain(de_queue, handle_type)
+        t.setDaemon(True)
+        t.start()
 
     de_queue.join()
 
@@ -129,10 +136,10 @@ if handle_type == '4':
         for domain in domains:
             de_queue.put((domain, None))
 
-            for i in range(max_thread_num):
-                t = ThreadDomain(de_queue, handle_type)
-                t.setDaemon(True)
-                t.start()
+        for i in range(max_thread_num):
+            t = ThreadDomain(de_queue, handle_type)
+            t.setDaemon(True)
+            t.start()
     else:
         default_sub_domains = sub_domains.split(',')
         print('\n---------域名需要删除的解析为 %s---------' % ', '.join(default_sub_domains))
@@ -142,10 +149,10 @@ if handle_type == '4':
         for domain in domains:
             de_queue.put((domain, default_sub_domains))
 
-            for i in range(max_thread_num):
-                t = ThreadDomain(de_queue, handle_type)
-                t.setDaemon(True)
-                t.start()
+        for i in range(max_thread_num):
+            t = ThreadDomain(de_queue, handle_type)
+            t.setDaemon(True)
+            t.start()
 
     de_queue.join()
 

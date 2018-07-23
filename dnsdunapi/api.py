@@ -30,6 +30,11 @@ class Handle:
             'format': "json",
         }
 
+        # self.headers = {
+        #     'Content-Type': "application/x-www-form-urlencoded",
+        #     'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+        #     }
+
     def req(self, api_type, method):
         params = {
             'c': api_type,  # domain/record
@@ -83,6 +88,7 @@ class Handle:
         self.data['domain'] = domain
         domain_records = self.record_list(domain)
         if len(domain_records) >0:
+            print(domain_records)
             if record_names is not None:
                 # self.data['record_id'] = domain_records[record_name]
                 # return self.req('record', 'del')
