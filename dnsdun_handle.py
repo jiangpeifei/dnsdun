@@ -5,9 +5,9 @@ from queue import Queue
 from dnsdunapi import api
 
 
-max_thread_num = 10
-uid = '56104',
-api_key = 'DdahszuZQfmXYGTz',
+max_thread_num = 20
+uid = 'uid',
+api_key = 'api_key',
 handle = api.Handle(uid, api_key)
 # domain_add = handle.domain_add('test.com')
 # record_add = handle.record_add(domain='test.com', sub_domain='*', value='1.1.1.1')
